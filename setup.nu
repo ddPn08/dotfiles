@@ -1,39 +1,53 @@
-print "Setup dotfiles"
-
-let repository_path = $env.FILE_PWD
-
-# check XDG_CONFIG_HOME
-if $env.XDG_CONFIG_HOME == "" {
-  print "XDG_CONFIG_HOME is not set"
-  exit 1
+def ask_yes_no [message: string] -> bool {
+    print $message
+    let answer = input
+    $answer == "y" or $answer == "Y"
 }
 
-mkdir $env.XDG_CONFIG_HOME
+def main [overwrite: bool = false] {
+    print "Setup dotfiles"
+    let repository_path = $env.FILE_PWD
 
-# link all configs
-let config_path = $repository_path | path join config
-
-if ($config_path | path type) != "dir" {
-    print "Config path not found"
-    exit 1
-}
-
-let configs = ls $config_path | where type == "dir" or type == "file"
-
-for config in $configs {
-    let config_name = $config.name | path basename
-    let config_target = $env.XDG_CONFIG_HOME | path join $config_name
-
-    if (try {
-        ls $config_target
-        true
-    } catch {
-        false
-    }) {
-        print $"Config ($config_name) already exists"
-        continue
+    # check XDG_CONFIG_HOME
+    if $env.XDG_CONFIG_HOME == "" {
+        print "XDG_CONFIG_HOME is not set"
+        exit 1
     }
 
-    ln -s $config.name $config_target
-    print $"Config ($config_name) linked"
+    mkdir $env.XDG_CONFIG_HOME
+
+    # link all configs
+    let configs = open ($repository_path | path join configs.toml)
+    let config_path = $repository_path | path join config
+
+    for row in ($configs | transpose) {
+        let config_name = $row | get column0
+        let config = $row | get column1
+        let filepath = $repository_path | path join config | path join $config.path
+        let basename = $filepath | path basename
+        let target_path = $env.XDG_CONFIG_HOME | path join $basename
+
+        if ($config.platform | where $it == $nu.os-info.name | is-empty) {
+            print $"Config ($basename) is not for this platform"
+            continue
+        }
+
+        if (try {
+            ls $target_path
+            true
+        } catch {
+            false
+        }) {
+            if $overwrite or (ask_yes_no $"Config ($config_name) already exists. Do you want to overwrite it? \(y/n\)") {
+                rm $target_path -r
+                print $"Config ($config_name) removed"
+            } else {
+                print $"Config ($config_name) already exists"
+                continue
+            }
+        }
+
+        ln -s $filepath $target_path
+        print $"Config ($config_name) linked"
+    }
 }

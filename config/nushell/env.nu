@@ -104,4 +104,5 @@ $env.NU_PLUGIN_DIRS = [
 use ~/.cache/starship/init.nu
 
 # conda.nu
-use ./nu_scripts/modules/virtual_environments/conda.nu
+$env.CONDA_NO_PROMPT = true
+use conda.nu

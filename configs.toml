@@ -1,0 +1,11 @@
+[nushell]
+path = "nushell/"
+platform = ["linux", "macos", "windows"]
+
+[starship]
+path = "starship.toml"
+platform = ["linux", "macos", "windows"]
+
+[tmux]
+path = "tmux/"
+platform = ["linux", "macos"]
