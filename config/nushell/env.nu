@@ -109,4 +109,30 @@ use ~/.cache/starship/init.nu
 
 # conda.nu
 $env.CONDA_NO_PROMPT = true
-use conda.nu
+use ./modules/python/conda.nu
+use ./modules/python/venv.nu
+
+# proto
+let proto_home = $"($env.HOME)/.proto"
+let proto_path = [
+    ($proto_home | path join "shims"),
+    ($proto_home | path join "bin"),
+    ($proto_home | path join "tools/node/globals/bin")
+]
+
+$env.PROTO_HOME = $proto_home
+$env.PATH = ($env.PATH | split row (char esep) | prepend $proto_path)
+
+# kubernetes
+$env.KUBECONFIG = $env.HOME | path join "data/k8s/kubeconfig"
+
+
+# MacOS
+if $nu.os-info.name == "macos" {
+    # Android
+    let android_home = $"($HOME)/Library/Android/sdk"
+    let ndk_home = $"($android_home)/ndk/27.0.12077973"
+
+    $env.ANDROID_HOME = $android_home
+    $env.NDK_HOME = $ndk_home
+}

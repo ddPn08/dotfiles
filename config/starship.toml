@@ -1,6 +1,8 @@
 format = """
 $os\
 $username\
+[](bg:#4c7b57 fg:#eeeeee)\
+$hostname\
 [](bg:#eeeeee fg:#4c7b57)\
 $directory\
 [](fg:#eeeeee bg:#4c7b57)\
@@ -34,17 +36,21 @@ $time\
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
-show_always = true
-style_user = "bg:#4c7b57 fg:#eeeeee bold"
-style_root = "bg:#4c7b57 fg:#eeeeee bold"
+style_user = "bg:#eeeeee fg:#4c7b57 bold"
+style_root = "bg:#eeeeee fg:#4c7b57 bold"
 format = '[ $user ]($style)'
+show_always = true
 disabled = false
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "bg:#4c7b57"
 disabled = true # Disabled by default
+
+[hostname]
+style = "bg:#4c7b57 fg:#eeeeee"
+format = '[ @$hostname ]($style)'
+ssh_only = true
 
 [directory]
 style = "bg:#eeeeee fg:#4c7b57"
