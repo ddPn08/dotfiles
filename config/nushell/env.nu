@@ -130,7 +130,7 @@ $env.KUBECONFIG = $env.HOME | path join "data/k8s/kubeconfig"
 # MacOS
 if $nu.os-info.name == "macos" {
     # Android
-    let android_home = $"($HOME)/Library/Android/sdk"
+    let android_home = $"($env.HOME)/Library/Android/sdk"
     let ndk_home = $"($android_home)/ndk/27.0.12077973"
 
     $env.ANDROID_HOME = $android_home
