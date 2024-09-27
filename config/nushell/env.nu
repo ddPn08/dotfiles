@@ -100,6 +100,10 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
+# tmux
+$env.TMUX_POWERLINE_THEME = "sasa"
+$env.TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER = "apple_music"
+
 # Starship
 use ~/.cache/starship/init.nu
 

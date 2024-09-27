@@ -20,34 +20,39 @@ def main [overwrite: bool = false] {
     let configs = open ($repository_path | path join configs.toml)
     let config_path = $repository_path | path join config
 
-    for row in ($configs | transpose) {
-        let config_name = $row | get column0
-        let config = $row | get column1
-        let filepath = $repository_path | path join config | path join $config.path
-        let basename = $filepath | path basename
-        let target_path = $env.XDG_CONFIG_HOME | path join $basename
-
+    for config in $configs.configs {
         if ($config.platform | where $it == $nu.os-info.name | is-empty) {
-            print $"Config ($basename) is not for this platform"
+            print $"Config ($config.name) is not for this platform"
             continue
         }
 
-        if (try {
-            ls $target_path
-            true
-        } catch {
-            false
-        }) {
-            if $overwrite or (ask_yes_no $"Config ($config_name) already exists. Do you want to overwrite it? \(y/n\)") {
-                rm $target_path -r
-                print $"Config ($config_name) removed"
-            } else {
-                print $"Config ($config_name) already exists"
-                continue
-            }
-        }
+        for $link in $config.links {
+            let source_path = $repository_path | path join config | path join $link.0
+            let target_path = $env.XDG_CONFIG_HOME | path join $link.1
 
-        ln -s $filepath $target_path
-        print $"Config ($config_name) linked"
+            print $"Linking ($source_path) to ($target_path)"
+
+            if (try {
+                ls $target_path
+                true
+            } catch {
+                false
+            }) {
+                if $overwrite or (ask_yes_no $"($target_path) already exists. Do you want to overwrite it? \(y/n\)") {
+                    if ($target_path | path type) == "symlink" {
+                        rm $target_path
+                        print $"($target_path) removed \(because it was a symlink\)"
+                    } else {
+                        mv $target_path $"($target_path).bak"
+                        print $"($target_path) backed up"
+                    }
+                } else {
+                    print $"($target_path) already exists"
+                    continue
+                }
+            }
+
+            ln -s $source_path $target_path
+        }
     }
 }
