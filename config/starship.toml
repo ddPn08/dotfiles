@@ -1,14 +1,11 @@
 format = """
 $os\
 $username\
-[](bg:#4c7b57 fg:#eeeeee)\
-$hostname\
 [](bg:#eeeeee fg:#4c7b57)\
+$hostname\
+[](bg:#4c7b57 fg:#eeeeee)\
 $directory\
-[](fg:#eeeeee bg:#4c7b57)\
-$git_branch\
-$git_status\
-[](fg:#4c7b57 bg:#b5fff9)\
+[](fg:#4c7b57 bg:#eeeeee)\
 $conda\
 $c\
 $elixir\
@@ -22,11 +19,10 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[](fg:#b5fff9 bg:#4c7b57)\
-$docker_context\
-[](fg:#4c7b57 bg:#eeeeee)\
-$time\
-[ ](fg:#eeeeee)
+[](fg:#eeeeee bg:#4c7b57)\
+$git_branch\
+$git_status\
+[](fg:#4c7b57)
 [ ❯](fg:#eeeeee) \
 """
 
@@ -36,8 +32,8 @@ $time\
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
-style_user = "bg:#eeeeee fg:#4c7b57 bold"
-style_root = "bg:#eeeeee fg:#4c7b57 bold"
+style_user = "bg:#4c7b57 fg:#eeeeee bold"
+style_root = "bg:#4c7b57 fg:#eeeeee bold"
 format = '[ $user ]($style)'
 show_always = true
 disabled = false
@@ -48,12 +44,12 @@ disabled = false
 disabled = true # Disabled by default
 
 [hostname]
-style = "bg:#4c7b57 fg:#eeeeee"
+style = "bg:#eeeeee fg:#4c7b57"
 format = '[ @$hostname ]($style)'
 ssh_only = true
 
 [directory]
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#4c7b57 fg:#eeeeee"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -72,7 +68,7 @@ truncation_symbol = "…/"
 # "Important 󰈙 " = " 󰈙 "
 
 [conda]
-style = "bg:#b5fff9 fg:#4c7b57"
+style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol($environment) ]($style)'
 symbol = " "
 
@@ -92,30 +88,24 @@ format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#b5fff9 fg:#4c7b57"
+style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-style = "bg:#b5fff9 fg:#4c7b57"
+style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#b5fff9 fg:#4c7b57"
+style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#b5ffff fg:#4c7b57"
+style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#b5fff9 fg:#4c7b57"
-format = '[ $symbol ($version) ]($style)'
-
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
 style = "bg:#eeeeee fg:#4c7b57"
-format = '[ $time ]($style)'
+format = '[ $symbol ($version) ]($style)'
