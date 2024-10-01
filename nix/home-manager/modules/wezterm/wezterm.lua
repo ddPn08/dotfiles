@@ -1,5 +1,7 @@
 local wezterm = require 'wezterm'
 
+local user = os.getenv("USER")
+
 local config = wezterm.config_builder()
 config.automatically_reload_config = true
 

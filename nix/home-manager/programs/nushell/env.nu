@@ -103,13 +103,6 @@ $env.NU_PLUGIN_DIRS = [
 use std "path add"
 $env.PATH = ($env.PATH | split row (char esep))
 
-# tmux
-$env.TMUX_POWERLINE_THEME = "sasa"
-$env.TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER = "apple_music"
-
-# Starship
-use ~/.cache/starship/init.nu
-
 # conda.nu
 $env.CONDA_NO_PROMPT = true
 use ./modules/python/conda.nu
@@ -131,6 +124,9 @@ $env.KUBECONFIG = $env.HOME | path join "data/k8s/kubeconfig"
 
 # MacOS
 if $nu.os-info.name == "macos" {
+    alias nu-open = open
+    alias open = ^open
+
     # Android
     let android_home = $"($env.HOME)/Library/Android/sdk"
     let ndk_home = $"($android_home)/ndk/27.0.12077973"

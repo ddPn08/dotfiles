@@ -22,7 +22,9 @@ $scala\
 [](fg:#eeeeee bg:#4c7b57)\
 $git_branch\
 $git_status\
-[](fg:#4c7b57)
+[](fg:#4c7b57 bg:#eeeeee)\
+$nix_shell\
+[](fg:#eeeeee)
 [ ❯](fg:#eeeeee) \
 """
 
@@ -109,3 +111,8 @@ format = '[ $symbol ($version) ]($style)'
 symbol = ""
 style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
+
+[nix_shell]
+symbol = " "
+style = "bg:#eeeeee fg:#4c7b57"
+format = '[ $symbol $name ]($style)'
