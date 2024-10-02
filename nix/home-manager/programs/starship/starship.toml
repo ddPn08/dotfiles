@@ -6,7 +6,6 @@ $hostname\
 [](bg:#4c7b57 fg:#eeeeee)\
 $directory\
 [](fg:#4c7b57 bg:#eeeeee)\
-$conda\
 $c\
 $elixir\
 $elm\
@@ -17,6 +16,7 @@ $java\
 $julia\
 $nodejs\
 $nim\
+$python\
 $rust\
 $scala\
 [](fg:#eeeeee bg:#4c7b57)\
@@ -30,7 +30,6 @@ $nix_shell\
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
-
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
@@ -63,17 +62,12 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
 # So either put "Important Documents" before "Documents" or use the substituted version:
 # "Important 󰈙 " = " 󰈙 "
-
-[conda]
-style = "bg:#eeeeee fg:#4c7b57"
-format = '[ $symbol($environment) ]($style)'
-symbol = " "
-
 [docker_context]
 symbol = " "
 style = "bg:#06969A"
@@ -106,6 +100,11 @@ format = '[ $symbol ($version) ]($style)'
 symbol = ""
 style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#eeeeee fg:#4c7b57"
+format = '[ $symbol ($version) ($virtualenv) ]($style)'
 
 [rust]
 symbol = ""

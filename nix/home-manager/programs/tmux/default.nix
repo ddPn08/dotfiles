@@ -13,6 +13,15 @@ let
   };
 in
 {
+
+  xdg.configFile = {
+    "tmux-powerline/config.sh".source = ./tmux-powerline/config.sh;
+    "tmux-powerline/themes" = {
+      source = ./tmux-powerline/themes;
+      recursive = true;
+    };
+  };
+
   programs.tmux = {
     enable = true;
     terminal = "xterm-256color";
@@ -25,13 +34,6 @@ in
         sensible
       ]
       ++ [ tmux-powerline ];
-    extraConfig = ''
-    '';
-  };
-
-  xdg.configFile."tmux-powerline/config.sh".source = ./tmux-powerline/config.sh;
-  xdg.configFile."tmux-powerline/themes" = {
-    source = ./tmux-powerline/themes;
-    recursive = true;
+    extraConfig = '''';
   };
 }

@@ -13,6 +13,7 @@ let
   ];
   base = with pkgs; [
     rust-bin.stable.latest.default
+    uv
   ];
   darwin = with pkgs.darwin; [
     ios-deploy

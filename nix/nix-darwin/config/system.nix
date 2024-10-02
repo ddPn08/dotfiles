@@ -7,7 +7,7 @@
       finder = {
         AppleShowAllFiles = true;
         AppleShowAllExtensions = true;
-        _FXShowPosixPathInTitle = true;
+        _FXShowPosixPathInTitle = false;
       };
       dock = {
         autohide = true;

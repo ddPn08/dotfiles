@@ -103,12 +103,8 @@ $env.NU_PLUGIN_DIRS = [
 use std "path add"
 $env.PATH = ($env.PATH | split row (char esep))
 
-# conda.nu
-$env.CONDA_NO_PROMPT = true
-use ./modules/python/conda.nu
-use ./modules/python/venv.nu
-
-$env.path = $env.PATH | split row (char esep)
+# python virtual env
+$env.VIRTUAL_ENV_DISABLE_PROMPT = true
 
 # proto
 let proto_home = $"($env.HOME)/.proto"
@@ -120,7 +116,6 @@ $env.PROTO_HOME = $proto_home
 
 # kubernetes
 $env.KUBECONFIG = $env.HOME | path join "data/k8s/kubeconfig"
-
 
 # MacOS
 if $nu.os-info.name == "macos" {
