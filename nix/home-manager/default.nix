@@ -28,5 +28,4 @@ in
     packages = packages;
   };
   programs.home-manager.enable = true;
-  programs.zsh.enable = true;
 }

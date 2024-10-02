@@ -15,9 +15,7 @@ let
     rust-bin.stable.latest.default
     uv
   ];
-  darwin = with pkgs.darwin; [
-    ios-deploy
-  ];
+  darwin = with pkgs.darwin; [ ios-deploy ];
   linux = with pkgs; [ ];
   windows = with pkgs; [ ];
   isWindows = system == "x86_64-windows";

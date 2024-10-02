@@ -27,8 +27,6 @@
       "visual-studio-code"
       "wezterm@nightly"
     ];
-    masApps =
-      {
-      };
+    masApps = { };
   };
 }

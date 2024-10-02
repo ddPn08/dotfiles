@@ -28,12 +28,7 @@ in
     baseIndex = 0;
     prefix = "C-b";
     sensibleOnTop = false;
-    plugins =
-      with pkgs.tmuxPlugins;
-      [
-        sensible
-      ]
-      ++ [ tmux-powerline ];
+    plugins = with pkgs.tmuxPlugins; [ sensible ] ++ [ tmux-powerline ];
     extraConfig = '''';
   };
 }
