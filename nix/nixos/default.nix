@@ -11,7 +11,7 @@ let
   i18n = import ./config/i18n.nix;
   networking = import ./config/networking.nix;
   nix = import ./config/nix.nix;
-  programs = import ./config/programs.nix;
+  programs = import ./config/programs.nix { inherit pkgs; };
   security = import ./config/security.nix { inherit username; };
   services = import ./config/services.nix;
   systemd = import ./config/systemd.nix;
