@@ -14,6 +14,7 @@ let
   base = with pkgs; [
     rust-bin.stable.latest.default
     uv
+    nodejs_20
     nodePackages.pnpm
   ];
   darwin = with pkgs.darwin; [ ios-deploy ];
