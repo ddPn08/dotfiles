@@ -24,9 +24,23 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e63471dd-050b-4375-8600-33d629028d19";
-    fsType = "ext4";
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/e63471dd-050b-4375-8600-33d629028d19";
+      fsType = "ext4";
+    };
+    "/mnt/nfs/WD20EARZ-0001" = {
+      device = "192.168.1.200:/mnt/WD20EARZ-0001";
+      fsType = "nfs";
+    };
+    "/mnt/nfs/SD6SP1M128G1012-0001" = {
+      device = "192.168.1.200:/mnt/SD6SP1M128G1012-0001";
+      fsType = "nfs";
+    };
+    "/mnt/nfs/CT120BX500SSD1-0001" = {
+      device = "192.168.1.200:/mnt/CT120BX500SSD1-0001";
+      fsType = "nfs";
+    };
   };
 
   swapDevices = [ ];
