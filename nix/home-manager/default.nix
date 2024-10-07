@@ -24,8 +24,11 @@ in
   xdg.enable = true;
 
   home = {
-    stateVersion = "24.05";
     packages = packages;
+    sessionVariables = {
+      KUBECONFIG = "${home-dir}/data/k8s/kubeconfig";
+    };
+    stateVersion = "24.05";
   };
   programs.home-manager.enable = true;
 }

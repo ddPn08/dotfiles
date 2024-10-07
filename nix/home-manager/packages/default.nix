@@ -16,6 +16,7 @@ let
     uv
     nodejs_20
     nodePackages.pnpm
+    kubectl
   ];
   darwin = with pkgs.darwin; [ ios-deploy ];
   linux = with pkgs; [ ];

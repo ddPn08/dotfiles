@@ -115,7 +115,7 @@ path add ($proto_home | path join "tools/node/globals/bin")
 $env.PROTO_HOME = $proto_home
 
 # kubernetes
-$env.KUBECONFIG = $env.HOME | path join "data/k8s/kubeconfig"
+$env.KUBECONFIG = $env.HOME | path join ".kube/config"
 
 # MacOS
 if $nu.os-info.name == "macos" {
