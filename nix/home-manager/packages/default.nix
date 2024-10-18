@@ -12,18 +12,19 @@ let
     nix-prefetch-scripts
   ];
   base = with pkgs; [
-    rust-bin.stable.latest.default
     uv
-    nodejs_20
-    nodePackages.pnpm
     kubectl
+    proto
+    act
   ];
-  darwin = with pkgs.darwin; [ ios-deploy ];
-  linux = with pkgs; [ ];
+  darwin-pkgs = with pkgs; [
+    darwin.ios-deploy
+  ];
+  linux-pkgs = with pkgs; [ ];
 in
 lib.mkMerge [
-  (if stdenv.isDarwin then darwin else [ ])
-  (if stdenv.isLinux then linux else [ ])
+  (if stdenv.isDarwin then darwin-pkgs  else [ ])
+  (if stdenv.isLinux then linux-pkgs else [ ])
   base
   nix-utils
 ]

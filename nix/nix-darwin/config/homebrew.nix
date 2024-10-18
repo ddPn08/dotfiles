@@ -11,6 +11,7 @@
       "asana"
       "audacity"
       "discord"
+      "docker"
       "figma"
       "gimp"
       "google-chrome"
@@ -20,6 +21,7 @@
       "notion"
       "obs"
       "postman"
+      "readdle-spark"
       "rectangle"
       "shottr"
       "slack"
@@ -28,6 +30,8 @@
       "wezterm@nightly"
       "xcodes"
     ];
-    masApps = { };
+    masApps = {
+      "Bitwarden" = 1352778147;
+    };
   };
 }
