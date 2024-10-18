@@ -16,6 +16,11 @@ let
     kubectl
     proto
     act
+    kubectl
+    ncdu
+    kubernetes-helm
+    cloudflared
+    sops
   ];
   darwin-pkgs = with pkgs; [
     darwin.ios-deploy
