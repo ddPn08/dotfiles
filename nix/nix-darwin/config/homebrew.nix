@@ -26,6 +26,7 @@
       "tailscale"
       "visual-studio-code"
       "wezterm@nightly"
+      "xcodes"
     ];
     masApps = { };
   };
