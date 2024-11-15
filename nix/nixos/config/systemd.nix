@@ -1,5 +1,6 @@
+{ isWsl, ... }:
 {
   systemd.services = {
-    "auto-fix-vscode-server".enable = false;
+    "auto-fix-vscode-server".enable = !isWsl;
   };
 }

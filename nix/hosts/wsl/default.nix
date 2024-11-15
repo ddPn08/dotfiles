@@ -1,9 +1,10 @@
 {
   nixpkgs,
+  nixos-wsl,
   home-manager,
-  nixos-vscode-server,
   neovim-nightly-overlay,
   rust-overlay,
+  ...
 }:
 let
   lib = nixpkgs.lib;
@@ -17,9 +18,8 @@ lib.nixosSystem {
     inherit username;
   };
   modules = [
-    ../../nixos
-    ./hardware-configuration.nix
-    nixos-vscode-server.nixosModules.default
+    ../../nixos/wsl.nix
+    nixos-wsl.nixosModules.wsl
     home-manager.nixosModules.home-manager
     {
       home-manager.useUserPackages = true;

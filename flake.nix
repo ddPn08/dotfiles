@@ -11,6 +11,10 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-wsl = {
+      url = "github:nix-community/nixos-wsl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     neovim-nightly-overlay = {
@@ -29,6 +33,7 @@
       nixpkgs,
       home-manager,
       nix-darwin,
+      nixos-wsl,
       nixos-vscode-server,
       neovim-nightly-overlay,
       rust-overlay,
@@ -47,18 +52,25 @@
             ;
         }
       );
-      nixosConfigurations = (
-        import ./nix/hosts/pve01-workspace {
+      nixosConfigurations = {
+        pve01-workspace = import ./nix/hosts/pve01-workspace {
           inherit
-            self
             nixpkgs
-            nix-darwin
             home-manager
             nixos-vscode-server
             neovim-nightly-overlay
             rust-overlay
             ;
-        }
-      );
+        };
+        wsl = import ./nix/hosts/wsl {
+          inherit
+            nixpkgs
+            nixos-wsl
+            home-manager
+            neovim-nightly-overlay
+            rust-overlay
+            ;
+        };
+      };
     };
 }

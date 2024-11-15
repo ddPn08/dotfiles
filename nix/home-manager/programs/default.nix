@@ -5,7 +5,8 @@
 }:
 let
   stdenv = pkgs.stdenv;
-  bash = import ./bash {inherit stdenv; };
+  bash = import ./bash { inherit stdenv; };
+  btop = import ./btop;
   gh = import ./gh;
   git = import ./git;
   gnupg = import ./gnupg;
@@ -19,6 +20,7 @@ let
 in
 [
   bash
+  btop
   gh
   git
   gnupg

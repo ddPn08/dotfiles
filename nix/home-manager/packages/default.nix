@@ -12,7 +12,22 @@ let
     nix-prefetch-scripts
   ];
   base = with pkgs; [
+    # Essential tools
+    wget
+    curl
+    git
+
+    # rust
+    rust-bin.stable.latest.default
+
+    # python
     uv
+
+    # nodejs
+    nodejs_20
+    nodePackages.pnpm
+
+    # kubernetes
     kubectl
     proto
     act

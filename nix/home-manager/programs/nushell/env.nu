@@ -130,4 +130,13 @@ if $nu.os-info.name == "macos" {
     $env.NDK_HOME = $ndk_home
 }
 
+# linux
+if $nu.os-info.name == "linux" {
+    if ($nu.os-info.kernel_version | str contains "WSL2") {
+        # WSL
+        echo "WSL!!!!!"
+        $env.NIX_LD_LIBRARY_PATH = $"($env.NIX_LD_LIBRARY_PATH):/usr/lib/wsl/lib/"
+    }
+}
+
 $env.PATH = ($env.PATH | uniq)
