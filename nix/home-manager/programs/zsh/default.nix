@@ -12,6 +12,6 @@
     '';
     envExtra = ''
       . "$HOME/.cargo/env"
-    '';
+    ''; 
   };
 }

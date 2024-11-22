@@ -16,6 +16,7 @@ let
     wget
     curl
     git
+    rclone
 
     # rust
     rust-bin.stable.latest.default

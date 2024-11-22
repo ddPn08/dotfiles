@@ -8,6 +8,7 @@
     };
     casks = [
       "android-studio"
+      "arc"
       "asana"
       "audacity"
       "discord"
@@ -16,6 +17,7 @@
       "gimp"
       "google-chrome"
       "maccy"
+      "macfuse"
       "motrix"
       "mysqlworkbench"
       "notion"
