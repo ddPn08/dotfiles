@@ -1,8 +1,11 @@
 {
   services = {
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
+    xserver = {
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      videoDrivers = [ "nvidia" ];
     };
 
     tailscale.enable = true;

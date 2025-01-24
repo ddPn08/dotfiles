@@ -9,6 +9,7 @@ let
   aria2 = import ./aria2;
   bash = import ./bash { inherit stdenv; };
   btop = import ./btop;
+  fish = import ./fish;
   gh = import ./gh;
   git = import ./git;
   gnupg = import ./gnupg;
@@ -24,6 +25,7 @@ in
   aria2
   bash
   btop
+  fish
   gh
   git
   gnupg

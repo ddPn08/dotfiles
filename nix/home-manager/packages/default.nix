@@ -50,7 +50,7 @@ let
   darwin-pkgs = with pkgs; [
     ios-deploy
   ];
-  linux-pkgs = with pkgs; [ ];
+  linux-pkgs = with pkgs; [];
 in
 lib.mkMerge [
   (if stdenv.isDarwin then darwin-pkgs else [ ])

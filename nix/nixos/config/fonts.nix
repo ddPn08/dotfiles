@@ -2,6 +2,8 @@
 {
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [ nerdfonts ];
+    packages = with pkgs; [
+      nerd-fonts.caskaydia-cove
+    ];
   };
 }

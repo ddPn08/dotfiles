@@ -1,8 +1,5 @@
 {
-  programs.nushell = {
-    extraEnv = ''
-      # kubernetes
-      $env.KUBECONFIG = $env.HOME | path join ".kube/config"
-    '';
+  home.sessionVariables = {
+    KUBECONFIG = "$HOME/data/k8s/kubeconfig";
   };
 }

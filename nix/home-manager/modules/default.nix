@@ -1,4 +1,3 @@
-{ ... }:
 let
   haskell = import ./haskell;
   k8s = import ./k8s;

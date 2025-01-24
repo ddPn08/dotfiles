@@ -11,4 +11,12 @@
       path add ($stack_home | path join "bin")
     '';
   };
+  programs.fish = {
+    shellInit = ''
+      # haskell
+      set -x PATH $HOME/.ghcup/bin $PATH
+      set -x PATH $HOME/.cabal/bin $PATH
+      set -x PATH $HOME/.stack/bin $PATH
+    '';
+  };
 }

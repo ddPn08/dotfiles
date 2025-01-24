@@ -1,7 +1,8 @@
 {
   programs.fish = {
+    enable = true;
     shellInit = ''
-      proto activate fish --export | source
+      set -g fish_greeting
     '';
   };
 }

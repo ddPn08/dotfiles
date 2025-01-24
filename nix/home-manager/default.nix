@@ -2,7 +2,6 @@
   lib,
   config,
   system,
-  home-dir,
   nixpkgs,
   neovim-nightly-overlay,
   ...
@@ -21,7 +20,7 @@ let
       neovim-nightly-overlay
       ;
   };
-  modules = import ./modules { inherit pkgs; };
+  modules = import ./modules;
 in
 {
   imports = programs ++ modules;
@@ -31,9 +30,15 @@ in
   home = {
     packages = packages;
     sessionVariables = {
-      KUBECONFIG = "${home-dir}/data/k8s/kubeconfig";
+      XDG_RUNTIME_DIR = "/run/user/$UID";
+      # Not officially in the specification
+      XDG_BIN_HOME = "$HOME/.local/bin";
     };
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
     stateVersion = "25.05";
   };
+
   programs.home-manager.enable = true;
 }
