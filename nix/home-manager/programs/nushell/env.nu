@@ -103,19 +103,8 @@ $env.NU_PLUGIN_DIRS = [
 use std "path add"
 $env.PATH = ($env.PATH | split row (char esep))
 
-# python virtual env
-$env.VIRTUAL_ENV_DISABLE_PROMPT = true
+path add ($env.HOME | path join ".local" "bin")
 
-# proto
-let proto_home = $"($env.HOME)/.proto"
-path add ($proto_home | path join "shims")
-path add ($proto_home | path join "bin")
-path add ($proto_home | path join "tools/node/globals/bin")
-
-$env.PROTO_HOME = $proto_home
-
-# kubernetes
-$env.KUBECONFIG = $env.HOME | path join ".kube/config"
 
 # MacOS
 if $nu.os-info.name == "macos" {
@@ -138,5 +127,3 @@ if $nu.os-info.name == "linux" {
         $env.NIX_LD_LIBRARY_PATH = $"($env.NIX_LD_LIBRARY_PATH):/usr/lib/wsl/lib/"
     }
 }
-
-$env.PATH = ($env.PATH | uniq)

@@ -4,7 +4,6 @@
   nix-darwin,
   home-manager,
   neovim-nightly-overlay,
-  rust-overlay,
 }:
 let
   lib = nixpkgs.lib;
@@ -31,17 +30,19 @@ in
       home-manager.darwinModules.home-manager
       {
         home-manager.useUserPackages = true;
-        home-manager.users."${username}" = import ../../home-manager {
-          inherit
-            lib
-            system
-            username
-            home-dir
-            nixpkgs
-            neovim-nightly-overlay
-            rust-overlay
-            ;
-        };
+        home-manager.users."${username}" =
+          { config, ...}:
+          import ../../home-manager {
+            inherit
+              config
+              lib
+              system
+              username
+              home-dir
+              nixpkgs
+              neovim-nightly-overlay
+              ;
+          };
       }
     ];
   };

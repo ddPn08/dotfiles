@@ -3,7 +3,6 @@
   home-manager,
   nixos-vscode-server,
   neovim-nightly-overlay,
-  rust-overlay,
 }:
 let
   lib = nixpkgs.lib;
@@ -31,7 +30,6 @@ lib.nixosSystem {
           home-dir
           nixpkgs
           neovim-nightly-overlay
-          rust-overlay
           ;
       };
     }

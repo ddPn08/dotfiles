@@ -1,10 +1,12 @@
 {
   lib,
+  config,
   pkgs,
   neovim-nightly-overlay,
 }:
 let
   stdenv = pkgs.stdenv;
+  aria2 = import ./aria2;
   bash = import ./bash { inherit stdenv; };
   btop = import ./btop;
   gh = import ./gh;
@@ -19,6 +21,7 @@ let
   zsh = import ./zsh { inherit stdenv; };
 in
 [
+  aria2
   bash
   btop
   gh

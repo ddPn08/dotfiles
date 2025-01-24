@@ -2,7 +2,7 @@
   description = "Minimal package definition for aarch64-darwin";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,10 +21,6 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -36,7 +32,6 @@
       nixos-wsl,
       nixos-vscode-server,
       neovim-nightly-overlay,
-      rust-overlay,
       ...
     }:
     {
@@ -48,7 +43,6 @@
             nix-darwin
             home-manager
             neovim-nightly-overlay
-            rust-overlay
             ;
         }
       );
@@ -59,7 +53,6 @@
             home-manager
             nixos-vscode-server
             neovim-nightly-overlay
-            rust-overlay
             ;
         };
         wsl = import ./nix/hosts/wsl {
@@ -68,7 +61,6 @@
             nixos-wsl
             home-manager
             neovim-nightly-overlay
-            rust-overlay
             ;
         };
       };

@@ -10,7 +10,7 @@
     noto-fonts-monochrome-emoji
     hackgen-font
     hackgen-nf-font
-    nerdfonts
+    nerd-fonts.caskaydia-cove
     emacs-all-the-icons-fonts
     font-awesome
     font-awesome_5

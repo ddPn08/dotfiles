@@ -1,21 +1,26 @@
 {
   lib,
+  config,
   system,
-  username,
   home-dir,
   nixpkgs,
   neovim-nightly-overlay,
-  rust-overlay,
   ...
 }:
 let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = [ rust-overlay.overlays.default ];
   };
   packages = import ./packages { inherit lib system pkgs; };
-  programs = import ./programs { inherit lib pkgs neovim-nightly-overlay; };
+  programs = import ./programs {
+    inherit
+      lib
+      config
+      pkgs
+      neovim-nightly-overlay
+      ;
+  };
   modules = import ./modules { inherit pkgs; };
 in
 {
@@ -28,7 +33,7 @@ in
     sessionVariables = {
       KUBECONFIG = "${home-dir}/data/k8s/kubeconfig";
     };
-    stateVersion = "24.05";
+    stateVersion = "25.05";
   };
   programs.home-manager.enable = true;
 }

@@ -6,11 +6,15 @@
       upgrade = true;
       cleanup = "uninstall";
     };
+    brews = [
+      "ghcup"
+    ];
     casks = [
       "android-studio"
       "arc"
       "asana"
       "audacity"
+      "cursor"
       "discord"
       "docker"
       "figma"
@@ -31,6 +35,7 @@
       "visual-studio-code"
       "wezterm@nightly"
       "xcodes"
+      "zen-browser"
     ];
     masApps = {
       "Bitwarden" = 1352778147;

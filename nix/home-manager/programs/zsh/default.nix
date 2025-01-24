@@ -10,8 +10,5 @@
 
       exec nu
     '';
-    envExtra = ''
-      . "$HOME/.cargo/env"
-    ''; 
   };
 }

@@ -3,7 +3,6 @@
   nixos-wsl,
   home-manager,
   neovim-nightly-overlay,
-  rust-overlay,
   ...
 }:
 let
@@ -31,7 +30,6 @@ lib.nixosSystem {
           home-dir
           nixpkgs
           neovim-nightly-overlay
-          rust-overlay
           ;
       };
     }
