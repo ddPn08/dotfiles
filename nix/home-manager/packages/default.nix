@@ -21,25 +21,14 @@ let
     act
     ncdu
     wasm-pack
-    (proto.overrideAttrs (drv: rec {
-      name = "proto";
-      version = "0.44.5";
-
-      src = pkgs.fetchFromGitHub {
-        owner = "moonrepo";
-        repo = "proto";
-        rev = "v${version}";
-        sha256 = "sha256-4ZmXJAHDEExn3aAlLd+Upopj9TZb1fOm+Zil0CoTsk4=";
-      };
-
-      cargoDeps = drv.cargoDeps.overrideAttrs (
-        lib.const {
-          name = "${name}-vendor.tar.gz";
-          inherit src;
-          outputHash = "sha256-T0Le1hIBWKqgn7mgrZEHW8ZE/gqFI6+v0ouqvjAyj7E=";
-        }
-      );
-    }))
+    proto
+    lsof
+    uv
+    stripe-cli
+    dotenvx
+    mariadb-client
+    act
+    claude-code
 
     # kubernetes
     kubectl
