@@ -1,6 +1,7 @@
 { pkgs }:
 {
   system = {
+    primaryUser = "ddpn08";
     stateVersion = 5;
     defaults = {
       NSGlobalDomain.AppleShowAllExtensions = true;

@@ -14,6 +14,7 @@ let
   git = import ./git;
   gnupg = import ./gnupg;
   k9s = import ./k9s;
+  lazygit = import ./lazygit;
   nvim = import ./neovim { inherit pkgs neovim-nightly-overlay; };
   nushell = import ./nushell;
   starship = import ./starship;
@@ -30,6 +31,7 @@ in
   git
   gnupg
   k9s
+  lazygit
   nvim
   nushell
   starship

@@ -16,6 +16,7 @@ let
     wget
     curl
     git
+    git-lfs
     rclone
     zstd
     act
@@ -29,6 +30,9 @@ let
     mariadb-client
     act
     claude-code
+    uv
+    cloudflared
+    ffmpeg
 
     # kubernetes
     kubectl
@@ -38,6 +42,7 @@ let
   ];
   darwin-pkgs = with pkgs; [
     ios-deploy
+    s3fs
   ];
   linux-pkgs = with pkgs; [];
 in

@@ -14,6 +14,8 @@
       "arc"
       "asana"
       "audacity"
+      "chatgpt"
+      "cloudflare-warp"
       "cursor"
       "discord"
       "docker"
@@ -35,10 +37,11 @@
       "visual-studio-code"
       "wezterm@nightly"
       "xcodes"
-      "zen-browser"
+      "zen"
     ];
     masApps = {
       "Bitwarden" = 1352778147;
+      "Azookey" = 1542709230;
     };
   };
 }
