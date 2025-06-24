@@ -2,6 +2,6 @@
 {
   programs = {
     nix-ld.enable = true;
-    fish.enable = true;
+    zsh.enable = true;
   };
 }

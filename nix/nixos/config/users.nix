@@ -1,7 +1,7 @@
 { pkgs, username }:
 {
   users.users.${username} = {
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [
       "networkmanager"

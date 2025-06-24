@@ -1,8 +1,7 @@
-{ stdenv }:
 {
   programs.zsh = {
-    enable = stdenv.isDarwin;
-    initExtra = ''
+    enable = true;
+    initContent = ''
       export PATH="/etc/profiles/per-user/$USER/bin:$HOME/bin:$PATH"
     '';
     syntaxHighlighting = {

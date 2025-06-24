@@ -10,6 +10,7 @@ let
   bash = import ./bash { inherit stdenv; };
   btop = import ./btop;
   fish = import ./fish;
+  fzf = import ./fzf;
   gh = import ./gh;
   git = import ./git;
   gnupg = import ./gnupg;
@@ -20,13 +21,14 @@ let
   starship = import ./starship;
   tmux = import ./tmux { inherit lib pkgs; };
   yt-dlp = import ./yt-dlp;
-  zsh = import ./zsh { inherit stdenv; };
+  zsh = import ./zsh;
 in
 [
   aria2
   bash
   btop
   fish
+  fzf
   gh
   git
   gnupg
