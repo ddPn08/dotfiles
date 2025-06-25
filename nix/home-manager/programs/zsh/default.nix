@@ -2,7 +2,10 @@
   programs.zsh = {
     enable = true;
     initContent = ''
-      export PATH="/etc/profiles/per-user/$USER/bin:$HOME/bin:$PATH"
+      # pnpm
+      export PNPM_HOME="$HOME/.local/share/pnpm"   # macOS では "$HOME/Library/pnpm"
+      export PATH="$PNPM_HOME:$PATH"
+      # pnpm end
     '';
     syntaxHighlighting = {
       enable = true;

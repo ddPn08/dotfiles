@@ -8,9 +8,6 @@
     "nvim/lua/plugins/formatting.lua".source = ./lua/plugins/formatting.lua;
   };
   
-  home.packages = with pkgs; [
-    gcc
-  ];
   programs.neovim = {
     enable = true;
     package = neovim-nightly-overlay.packages.${pkgs.system}.default;

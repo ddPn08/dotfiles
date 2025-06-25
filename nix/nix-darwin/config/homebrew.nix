@@ -18,7 +18,6 @@
       "cloudflare-warp"
       "cursor"
       "discord"
-      "docker"
       "figma"
       "gimp"
       "google-chrome"
