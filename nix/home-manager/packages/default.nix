@@ -44,7 +44,9 @@ let
     ios-deploy
     s3fs
   ];
-  linux-pkgs = with pkgs; [];
+  linux-pkgs = with pkgs; [
+    gcc
+  ];
 in
 lib.mkMerge [
   (if stdenv.isDarwin then darwin-pkgs else [ ])
