@@ -32,7 +32,7 @@
       "rectangle"
       "shottr"
       "slack"
-      "tailscale"
+      "tailscale-app"
       "visual-studio-code"
       "wezterm@nightly"
       "xcodes"
