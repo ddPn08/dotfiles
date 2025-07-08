@@ -13,6 +13,7 @@ let
   ];
   base = with pkgs; [
     # Essential tools
+    vim
     wget
     curl
     git
