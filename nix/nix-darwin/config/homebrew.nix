@@ -40,7 +40,6 @@
     ];
     masApps = {
       "Bitwarden" = 1352778147;
-      "Azookey" = 1542709230;
     };
   };
 }
