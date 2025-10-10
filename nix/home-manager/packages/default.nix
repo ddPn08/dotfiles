@@ -44,6 +44,7 @@ let
   darwin-pkgs = with pkgs; [
     ios-deploy
     s3fs
+    mas
   ];
   linux-pkgs = with pkgs; [
     gcc

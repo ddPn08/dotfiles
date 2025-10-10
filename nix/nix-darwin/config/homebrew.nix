@@ -40,6 +40,7 @@
     ];
     masApps = {
       "Bitwarden" = 1352778147;
+      "Amazon Prime Video" = 545519333;
     };
   };
 }
