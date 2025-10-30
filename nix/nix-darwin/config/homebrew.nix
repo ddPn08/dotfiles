@@ -21,6 +21,7 @@
       "figma"
       "gimp"
       "google-chrome"
+      "linear-linear"
       "maccy"
       "macfuse"
       "motrix"

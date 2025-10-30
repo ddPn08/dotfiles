@@ -31,6 +31,7 @@ let
     mariadb-client
     act
     claude-code
+    codex
     uv
     cloudflared
     ffmpeg
