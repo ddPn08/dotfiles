@@ -5,7 +5,7 @@
 
     ignores = [ ".DS_Store" ];
 
-    extraConfig = {
+    settings = {
       core = {
         editor = "nvim";
         quotepath = "off";

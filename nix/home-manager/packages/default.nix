@@ -12,6 +12,8 @@ let
     nix-prefetch-scripts
   ];
   base = with pkgs; [
+    (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
+
     # Essential tools
     vim
     wget
@@ -28,7 +30,7 @@ let
     uv
     stripe-cli
     dotenvx
-    mariadb-client
+    mariadb.client
     act
     claude-code
     codex
