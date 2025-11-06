@@ -23,7 +23,6 @@ in
     };
     extraSpecialArgs = {
       inherit
-        lib
         system
         username
         home-dir
@@ -36,7 +35,7 @@ in
         home.username = username;
         home.homeDirectory = home-dir;
       })
-      ({ config, ... }:
+      ({ config, lib, ... }:
         import ../../home-manager {
           inherit
             config
