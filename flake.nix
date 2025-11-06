@@ -64,5 +64,13 @@
             ;
         };
       };
+      homeConfigurations =
+        import ./nix/hosts/portable {
+          inherit
+            nixpkgs
+            home-manager
+            neovim-nightly-overlay
+            ;
+        };
     };
 }
