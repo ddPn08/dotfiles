@@ -14,37 +14,38 @@ let
   ];
 
   base = with pkgs; [
+    # Cloud & platform CLIs
     (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
-    (google-cloud-sdk.withExtraComponents(with pkgs.google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]))
-    # Essential tools
-    vim
-    wget
+    (google-cloud-sdk.withExtraComponents (with pkgs.google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]))
+    cloudflared
+    stripe-cli
+
+    # Kubernetes tooling
+    kubectl
+    kubernetes-helm
+    sops
+
+    # Core CLI essentials
     curl
     git
     git-lfs
-    rclone
-    zstd
-    act
-    ncdu
-    wasm-pack
-    proto
     lsof
-    uv
-    stripe-cli
-    dotenvx
-    mariadb.client
+    ncdu
+    rclone
+    vim
+    wget
+    zstd
+
+    # Developer productivity
     act
     claude-code
     codex
-    uv
-    cloudflared
+    dotenvx
     ffmpeg
-
-    # kubernetes
-    kubectl
-    kubernetes-helm
-    cloudflared
-    sops
+    mariadb.client
+    proto
+    uv
+    wasm-pack
   ];
   darwin-pkgs = with pkgs; [
     ios-deploy
