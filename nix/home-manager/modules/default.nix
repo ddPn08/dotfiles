@@ -1,6 +1,5 @@
 let
   haskell = import ./haskell;
-  k8s = import ./k8s;
   pnpm = import ./pnpm;  
   proto = import ./proto;
   python = import ./python;
@@ -9,7 +8,6 @@ let
 in
 [
   haskell
-  k8s
   proto
   pnpm
   python
