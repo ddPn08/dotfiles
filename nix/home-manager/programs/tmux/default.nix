@@ -26,7 +26,7 @@ in
     enable = true;
     terminal = "xterm-256color";
     baseIndex = 0;
-    prefix = "C-b";
+    prefix = "C-p";
     sensibleOnTop = false;
     plugins = with pkgs.tmuxPlugins; [ sensible ] ++ [ tmux-powerline ];
     extraConfig = '''';
