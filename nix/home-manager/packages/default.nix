@@ -46,6 +46,7 @@ let
     proto
     uv
     wasm-pack
+    terraform
   ];
   darwin-pkgs = with pkgs; [
     ios-deploy
