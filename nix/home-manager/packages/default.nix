@@ -42,6 +42,7 @@ let
     codex
     dotenvx
     ffmpeg
+    google-cloud-sql-proxy
     mariadb.client
     proto
     uv
