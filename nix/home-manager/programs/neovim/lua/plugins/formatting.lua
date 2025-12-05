@@ -25,11 +25,11 @@ local js_ts_formatters = function(bufnr)
   }, { upward = true, path = vim.api.nvim_buf_get_name(bufnr) })[1]
 
   if has_prettier then
-    return { "prettier" }
+    return { "prettier", "eslint_d" }
   end
 
-  -- デフォルトはbiome
-  return { "biome" }
+  -- デフォルトはprettier + eslint
+  return { "prettier", "eslint_d" }
 end
 
 return {
