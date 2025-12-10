@@ -18,7 +18,6 @@
       "cloudflare-warp"
       "cursor"
       "discord"
-      "docker"
       "drawio"
       "figma"
       "gimp"
@@ -30,6 +29,7 @@
       "mysqlworkbench"
       "notion"
       "obs"
+      "orbstack"
       "pgadmin4"
       "postman"
       "readdle-spark"
@@ -40,7 +40,7 @@
       "tailscale-app"
       "visual-studio-code"
       "wezterm@nightly"
-      "xcodes"
+      "xcodes-app"
       "zen"
     ];
     masApps = {

@@ -22,8 +22,10 @@ let
 
     # Kubernetes tooling
     kubectl
+    kustomize
     kubernetes-helm
     sops
+    docker-credential-helpers
 
     # Core CLI essentials
     curl
@@ -35,6 +37,7 @@ let
     vim
     wget
     zstd
+    envsubst
 
     # Developer productivity
     act
