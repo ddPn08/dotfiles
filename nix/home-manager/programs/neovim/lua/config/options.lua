@@ -43,3 +43,24 @@ vim.opt.formatoptions:append({ "r" })
 if vim.fn.has("nvim-0.8") == 1 then
 	vim.opt.cmdheight = 0
 end
+
+vim.g.rustaceanvim = {
+	server = {
+		default_settings = {
+			["rust-analyzer"] = {
+				check = {
+					command = "clippy",
+					extraArgs = {
+						"--no-deps",
+						"--",
+						"-W",
+						"clippy::pedantic",
+						"-D",
+						"warnings",
+					},
+				},
+				checkOnSave = true,
+			},
+		},
+	},
+}

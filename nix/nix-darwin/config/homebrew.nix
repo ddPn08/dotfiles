@@ -28,6 +28,7 @@
       "motrix"
       "mysqlworkbench"
       "notion"
+      "osu"
       "obs"
       "orbstack"
       "pgadmin4"
