@@ -1,6 +1,5 @@
 {
   lib,
-  system,
   pkgs,
 }:
 let
@@ -43,17 +42,18 @@ let
     act
     claude-code
     codex
-    dotenvx
+    # dotenvx # TODO: nixpkgs package broken, re-add when fixed
+    gemini-cli
     ffmpeg
     google-cloud-sql-proxy
     mariadb.client
+    neovim-remote
     proto
     uv
     wasm-pack
     terraform
   ];
   darwin-pkgs = with pkgs; [
-    ios-deploy
     s3fs
     mas
   ];

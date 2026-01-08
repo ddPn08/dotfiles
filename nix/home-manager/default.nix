@@ -11,7 +11,7 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-  packages = import ./packages { inherit lib system pkgs; };
+  packages = import ./packages { inherit lib pkgs; };
   programs = import ./programs {
     inherit
       lib

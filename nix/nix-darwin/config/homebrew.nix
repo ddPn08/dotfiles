@@ -8,6 +8,7 @@
     };
     brews = [
       "ghcup"
+      "ios-deploy"
     ];
     casks = [
       "android-studio"
@@ -30,6 +31,7 @@
       "notion"
       "osu"
       "obs"
+      "obsidian"
       "orbstack"
       "pgadmin4"
       "postman"
