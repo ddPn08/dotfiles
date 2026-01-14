@@ -5,17 +5,19 @@
 let
   stdenv = pkgs.stdenv;
 
-
   nix-utils = with pkgs; [
     nil
-    nixfmt-rfc-style
+    statix
+    nixfmt
     nix-prefetch-scripts
   ];
 
   base = with pkgs; [
     # Cloud & platform CLIs
     (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
-    (google-cloud-sdk.withExtraComponents (with pkgs.google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]))
+    (google-cloud-sdk.withExtraComponents (
+      with pkgs.google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]
+    ))
     cloudflared
     stripe-cli
 
@@ -47,8 +49,6 @@ let
     ffmpeg
     google-cloud-sql-proxy
     mariadb.client
-    neovim-remote
-    proto
     uv
     wasm-pack
     terraform

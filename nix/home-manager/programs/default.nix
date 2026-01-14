@@ -18,6 +18,8 @@ let
   lazygit = import ./lazygit;
   nvim = import ./neovim { inherit pkgs neovim-nightly-overlay; };
   nushell = import ./nushell;
+  mise = import ./mise;
+  opencode = import ./opencode;
   ripgrep = import ./ripgrep;
   starship = import ./starship;
   tmux = import ./tmux { inherit lib pkgs; };
@@ -37,6 +39,8 @@ in
   lazygit
   nvim
   nushell
+  mise
+  opencode
   ripgrep
   starship
   tmux
