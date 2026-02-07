@@ -4,6 +4,8 @@ return {
     opts = {
       servers = {
         nil_ls = {
+          -- Skip Mason installation (nil is installed via Nix)
+          mason = false,
           settings = {
             ["nil"] = {
               formatting = {

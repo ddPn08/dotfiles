@@ -29,6 +29,9 @@ in
     prefix = "C-p";
     sensibleOnTop = false;
     plugins = with pkgs.tmuxPlugins; [ sensible ] ++ [ tmux-powerline ];
-    extraConfig = '''';
+    extraConfig = ''
+      set -g pane-active-border-style fg=cyan,bold
+      set -g pane-border-style fg=colour240
+    '';
   };
 }

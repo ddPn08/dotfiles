@@ -13,6 +13,10 @@ let
   ];
 
   base = with pkgs; [
+    # Search & find utilities (required by neovim plugins)
+    fd
+    ripgrep
+
     # Cloud & platform CLIs
     (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
     (google-cloud-sdk.withExtraComponents (
@@ -44,11 +48,13 @@ let
     act
     claude-code
     codex
+
     # dotenvx # TODO: nixpkgs package broken, re-add when fixed
     gemini-cli
     ffmpeg
     google-cloud-sql-proxy
     mariadb.client
+    postgresql
     uv
     wasm-pack
     terraform
@@ -59,6 +65,7 @@ let
   ];
   linux-pkgs = with pkgs; [
     gcc
+    python3
   ];
 in
 lib.mkMerge [

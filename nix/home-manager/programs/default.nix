@@ -19,11 +19,12 @@ let
   nvim = import ./neovim { inherit pkgs neovim-nightly-overlay; };
   nushell = import ./nushell;
   mise = import ./mise;
-  opencode = import ./opencode;
+
   ripgrep = import ./ripgrep;
   starship = import ./starship;
   tmux = import ./tmux { inherit lib pkgs; };
   yt-dlp = import ./yt-dlp;
+  zellij = import ./zellij;
   zsh = import ./zsh;
 in
 [
@@ -40,10 +41,10 @@ in
   nvim
   nushell
   mise
-  opencode
   ripgrep
   starship
   tmux
   yt-dlp
+  zellij
   zsh
 ]
