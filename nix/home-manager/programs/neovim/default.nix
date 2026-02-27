@@ -8,6 +8,7 @@
     "nvim/lua/plugins/formatting.lua".source = ./lua/plugins/formatting.lua;
     "nvim/lua/plugins/toggleterm.lua".source = ./lua/plugins/toggleterm.lua;
     "nvim/lua/plugins/nix.lua".source = ./lua/plugins/nix.lua;
+    "nvim/lua/plugins/haskell.lua".source = ./lua/plugins/haskell.lua;
     "nvim/lua/plugins/diffview.lua".source = ./lua/plugins/diffview.lua;
   };
 

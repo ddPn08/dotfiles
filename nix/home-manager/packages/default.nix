@@ -46,8 +46,6 @@ let
 
     # Developer productivity
     act
-    claude-code
-    codex
 
     # dotenvx # TODO: nixpkgs package broken, re-add when fixed
     gemini-cli

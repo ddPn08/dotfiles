@@ -9,6 +9,7 @@ let
   aria2 = import ./aria2;
   bash = import ./bash { inherit stdenv; };
   btop = import ./btop;
+  direnv = import ./direnv;
   fish = import ./fish;
   fzf = import ./fzf;
   gh = import ./gh;
@@ -31,6 +32,7 @@ in
   aria2
   bash
   btop
+  direnv
   fish
   fzf
   gh
