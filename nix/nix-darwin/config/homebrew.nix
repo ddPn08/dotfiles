@@ -13,10 +13,12 @@
     casks = [
       "android-studio"
       "arc"
+      "antigravity"
       "asana"
       "audacity"
       "chatgpt"
       "cloudflare-warp"
+      "codex-app"
       "cursor"
       "discord"
       "drawio"
@@ -28,6 +30,7 @@
       "macfuse"
       "motrix"
       "mysqlworkbench"
+      "nani"
       "notion"
       "osu"
       "obs"
@@ -35,6 +38,7 @@
       "orbstack"
       "pgadmin4"
       "postman"
+      "prismlauncher"
       "readdle-spark"
       "rectangle"
       "shottr"
@@ -45,10 +49,13 @@
       "wezterm@nightly"
       "xcodes-app"
       "zen"
+      "zoom"
     ];
     masApps = {
       "Bitwarden" = 1352778147;
       "Amazon Prime Video" = 545519333;
+      "Amazon Kindle" = 302584613;
+      "RunCat" = 1429033973;
     };
   };
 }

@@ -18,7 +18,6 @@
       };
 
       commit = {
-        template = "~/.config/git/message";
         gpgsign = true;
       };
 
@@ -54,6 +53,10 @@
 
       init = {
         defaultBranch = "main";
+      };
+
+      lfs = {
+        concurrenttransfers = 50;
       };
     };
   };

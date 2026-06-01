@@ -18,6 +18,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.toml" },
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lang.helm" },
+		{ import = "lazyvim.plugins.extras.lang.java" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.svelte" },
@@ -27,9 +28,24 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.terraform" },
 		{ import = "lazyvim.plugins.extras.lang.nix" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
-		{ import = "lazyvim.plugins.extras.formatting.biome" },
+		{ import = "lazyvim.plugins.extras.lang.typescript.biome" },
+		{ import = "lazyvim.plugins.extras.lang.typescript.oxc" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.util.octo" },
+		{
+			"folke/snacks.nvim",
+			opts = {
+				picker = {
+					sources = {
+						explorer = {
+							layout = {
+								cycle = false,
+							},
+						},
+					},
+				},
+			},
+		},
 		-- { import = "lazyvim.plugins.extras.lsp.none-ls" },
 		-- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 		-- import/override with your plugins

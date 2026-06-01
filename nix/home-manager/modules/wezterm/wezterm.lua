@@ -6,10 +6,16 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 
 config.font_size = 12.0
-config.font = wezterm.font("CaskaydiaCove Nerd Font", {
-    weight = "Regular",
-    stretch = "Normal",
-    style = "Normal"
+config.font = wezterm.font_with_fallback({
+    {
+        family = "CaskaydiaCove Nerd Font",
+        weight = "Regular",
+        stretch = "Normal",
+        style = "Normal",
+    },
+    {
+        family = "HackGen Console NF",
+    },
 })
 
 config.use_ime = true

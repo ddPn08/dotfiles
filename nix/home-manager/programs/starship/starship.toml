@@ -111,6 +111,11 @@ symbol = ""
 style = "bg:#eeeeee fg:#4c7b57"
 format = '[ $symbol ($version) ]($style)'
 
+[haskell]
+symbol = " "
+style = "bg:#eeeeee fg:#4c7b57"
+format = '[ $symbol ($version) ]($style)'
+
 [nix_shell]
 symbol = " "
 style = "bg:#eeeeee fg:#4c7b57"

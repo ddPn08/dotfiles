@@ -7,6 +7,7 @@ let
 
   nix-utils = with pkgs; [
     nil
+    nixd
     statix
     nixfmt
     nix-prefetch-scripts
@@ -26,10 +27,6 @@ let
     stripe-cli
 
     # Kubernetes tooling
-    kubectl
-    kustomize
-    kubernetes-helm
-    sops
     docker-credential-helpers
 
     # Core CLI essentials
@@ -43,19 +40,17 @@ let
     wget
     zstd
     envsubst
-
-    # Developer productivity
-    act
-
-    # dotenvx # TODO: nixpkgs package broken, re-add when fixed
-    gemini-cli
+    rsync
     ffmpeg
-    google-cloud-sql-proxy
-    mariadb.client
-    postgresql
-    uv
-    wasm-pack
-    terraform
+    dotenvx
+
+    # AI Agents
+    codex
+
+    # haskell
+    (haskellPackages.hpack)
+    (haskellPackages.hoogle)
+    (haskellPackages.stylish-haskell)
   ];
   darwin-pkgs = with pkgs; [
     s3fs

@@ -5,9 +5,8 @@
   neovim-nightly-overlay,
 }:
 let
-  stdenv = pkgs.stdenv;
   aria2 = import ./aria2;
-  bash = import ./bash { inherit stdenv; };
+  bash = import ./bash;
   btop = import ./btop;
   direnv = import ./direnv;
   fish = import ./fish;

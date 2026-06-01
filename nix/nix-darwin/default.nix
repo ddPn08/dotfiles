@@ -2,7 +2,7 @@
 let
   fonts = import ./config/fonts.nix { inherit pkgs; };
   homebrew = import ./config/homebrew.nix;
-  nix = import ./config/nix.nix;
+  nix = import ./config/nix.nix { inherit pkgs; };
   programs = import ./config/programs.nix;
   security = import ./config/security.nix { inherit username; };
   services = import ./config/services.nix;
