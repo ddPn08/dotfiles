@@ -46,6 +46,7 @@ let
 
     # AI Agents
     codex
+    antigravity
 
     # haskell
     (haskellPackages.hpack)
@@ -53,7 +54,6 @@ let
     (haskellPackages.stylish-haskell)
   ];
   darwin-pkgs = with pkgs; [
-    s3fs
     mas
   ];
   linux-pkgs = with pkgs; [

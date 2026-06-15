@@ -5,6 +5,7 @@
       autoUpdate = true;
       upgrade = true;
       cleanup = "uninstall";
+      extraFlags = [ "--force-cleanup" ];
     };
     brews = [
       "ghcup"
@@ -13,7 +14,6 @@
     casks = [
       "android-studio"
       "arc"
-      "antigravity"
       "asana"
       "audacity"
       "chatgpt"

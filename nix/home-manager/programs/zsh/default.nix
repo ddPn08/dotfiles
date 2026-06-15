@@ -14,6 +14,9 @@
       export PATH="$PNPM_HOME:$PATH"
       # pnpm end
     '';
+    profileExtra = ''
+      source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+    '';
     syntaxHighlighting = {
       enable = true;
     };
