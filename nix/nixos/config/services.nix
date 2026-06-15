@@ -10,5 +10,6 @@
 
     tailscale.enable = true;
     vscode-server.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
 }

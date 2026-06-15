@@ -2,6 +2,7 @@
   programs.lazygit = {
     enable = true;
     settings = {
+      overrideGpg = true;
       gui.theme = {
         lightTheme = true;
         activeBorderColor = [ "blue" "bold" ];

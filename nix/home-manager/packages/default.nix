@@ -41,6 +41,14 @@ let
     zstd
     envsubst
     rsync
+    unzip
+    gnumake
+
+    # Developer productivity
+    act
+
+    # dotenvx # TODO: nixpkgs package broken, re-add when fixed
+    gemini-cli
     ffmpeg
     dotenvx
 
