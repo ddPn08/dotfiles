@@ -1,5 +1,21 @@
 vim.g.mapleader = " "
 
+vim.filetype.add({
+	extension = {
+		tilt = "starlark",
+	},
+	filename = {
+		Tiltfile = "starlark",
+		tiltfile = "starlark",
+	},
+	pattern = {
+		[".*/Tiltfile%..*"] = "starlark",
+		[".*/tiltfile%..*"] = "starlark",
+		["Tiltfile%..*"] = "starlark",
+		["tiltfile%..*"] = "starlark",
+	},
+})
+
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 

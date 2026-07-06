@@ -47,13 +47,15 @@ let
     # Developer productivity
     act
 
+    # Frontend
+    pnpm
+
     # dotenvx # TODO: nixpkgs package broken, re-add when fixed
     gemini-cli
     ffmpeg
     dotenvx
 
     # AI Agents
-    codex
     antigravity
 
     # haskell

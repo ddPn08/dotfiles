@@ -31,6 +31,7 @@ in
     keyMode = "vi";
     plugins = with pkgs.tmuxPlugins; [ sensible ] ++ [ tmux-powerline ];
     extraConfig = ''
+      set -g extended-keys on
       set -g pane-active-border-style fg=cyan,bold
       set -g pane-border-style fg=colour240
 

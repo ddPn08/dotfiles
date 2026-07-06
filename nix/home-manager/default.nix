@@ -38,9 +38,9 @@ in
     #   # Create virtual XDG_RUNTIME_DIR for macOS
     #   XDG_RUNTIME_DIR = "$HOME/.cache/runtime";
     # };
-    # sessionPath = [
-    #   "$HOME/.local/bin"
-    # ];
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
     stateVersion = "25.05";
     activation = lib.mkIf pkgs.stdenv.isDarwin {
       createXdgRuntimeDir = config.lib.dag.entryAfter [ "writeBoundary" ] ''

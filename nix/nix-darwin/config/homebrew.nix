@@ -8,6 +8,7 @@
       extraFlags = [ "--force-cleanup" ];
     };
     brews = [
+      "fluid-synth"
       "ghcup"
       "ios-deploy"
     ];
@@ -17,6 +18,7 @@
       "asana"
       "audacity"
       "chatgpt"
+      "claude"
       "cloudflare-warp"
       "codex-app"
       "cursor"
@@ -25,6 +27,7 @@
       "figma"
       "gimp"
       "google-chrome"
+      "gstreamer-runtime"
       "linear-linear"
       "maccy"
       "macfuse"
@@ -47,6 +50,7 @@
       "tailscale-app"
       "visual-studio-code"
       "wezterm@nightly"
+      "wine-stable"
       "xcodes-app"
       "zen"
       "zoom"
