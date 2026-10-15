@@ -52,7 +52,8 @@ in
       set -g pane-border-style "fg=#829181"
       set -g mode-style "fg=#5c6a72,bg=#e1e4bd"
       set -g extended-keys-format csi-u
-      set -g allow-passthrough on
+      # Forward notifications even from windows/panes that are not visible.
+      set -g allow-passthrough all
 
       # Vim-like pane navigation
       bind h select-pane -L

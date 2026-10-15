@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  # Follow the sound selected in macOS System Settings instead of a fixed file.
+  home.sessionVariables = pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+    PI_NOTIFY_SOUND_CMD = "/usr/bin/osascript -e beep";
+  };
+
   programs.pi-coding-agent = {
     enable = true;
     package = pkgs.pi-coding-agent.overrideAttrs (
