@@ -3,7 +3,6 @@ let
   pnpm = import ./pnpm;
   python = import ./python;
   rustup = import ./rustup;
-  tuicr = import ./tuicr;
   wezterm = import ./wezterm;
 in
 [
@@ -11,6 +10,5 @@ in
   pnpm
   python
   rustup
-  tuicr
   wezterm
 ]

@@ -301,11 +301,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1790190268,
-        "narHash": "sha256-kObt0MLJZYASWM1vexZTPaIeFaU2XpT9sHUSdClRz2Y=",
+        "lastModified": 1791885706,
+        "narHash": "sha256-OqnKyzo8Scs7sGMa28uRCmpa7987e3dJZGWC/nfNyAY=",
         "owner": "agavra",
         "repo": "tuicr",
-        "rev": "9175dc95b97a0a7dd290d43d38385745a7fb7d40",
+        "rev": "d02955aac01e0e074dccbf9916a90df57651e4ef",
         "type": "github"
       },
       "original": {
