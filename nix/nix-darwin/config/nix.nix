@@ -2,11 +2,6 @@
 {
   nix = {
     enable = true;
-    linux-builder = {
-      enable = true;
-      package = pkgs.darwin.linux-builder-x86_64;
-      systems = [ "x86_64-linux" ];
-    };
     optimise.automatic = true;
     settings = {
       experimental-features = "nix-command flakes";

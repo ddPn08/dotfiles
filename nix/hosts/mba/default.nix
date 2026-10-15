@@ -4,6 +4,7 @@
   nix-darwin,
   home-manager,
   neovim-nightly-overlay,
+  tuicr,
 }:
 let
   lib = nixpkgs.lib;
@@ -41,6 +42,7 @@ in
               home-dir
               nixpkgs
               neovim-nightly-overlay
+              tuicr
               ;
           };
       }

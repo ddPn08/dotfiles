@@ -5,7 +5,7 @@ let
   nix = import ./config/nix.nix { inherit pkgs; };
   programs = import ./config/programs.nix;
   security = import ./config/security.nix { inherit username; };
-  services = import ./config/services.nix;
+  services = import ./config/services.nix { inherit pkgs; };
   system = import ./config/system.nix { inherit pkgs; };
   users = import ./config/users.nix { inherit pkgs username; };
 in

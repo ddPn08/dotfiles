@@ -1,5 +1,9 @@
 { pkgs }:
 {
+  documentation.doc.enable = false;
+
+  system.tools.darwin-uninstaller.enable = false;
+
   system = {
     primaryUser = "ddpn08";
     stateVersion = 5;

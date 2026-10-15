@@ -1,5 +1,5 @@
 {
-  programs.zellij = {
+  programs.uv = {
     enable = true;
   };
 }

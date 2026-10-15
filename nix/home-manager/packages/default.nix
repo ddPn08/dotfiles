@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  tuicr,
 }:
 let
   stdenv = pkgs.stdenv;
@@ -46,17 +47,14 @@ let
 
     # Developer productivity
     act
-
-    # Frontend
     pnpm
 
+    # Local code review TUI
+    tuicr.packages.${stdenv.hostPlatform.system}.default
+
     # dotenvx # TODO: nixpkgs package broken, re-add when fixed
-    gemini-cli
     ffmpeg
     dotenvx
-
-    # AI Agents
-    antigravity
 
     # haskell
     (haskellPackages.hpack)

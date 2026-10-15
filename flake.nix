@@ -21,6 +21,11 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    tuicr = {
+      url = "github:agavra/tuicr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +37,7 @@
       nixos-wsl,
       nixos-vscode-server,
       neovim-nightly-overlay,
+      tuicr,
       ...
     }:
     {
@@ -43,6 +49,7 @@
             nix-darwin
             home-manager
             neovim-nightly-overlay
+            tuicr
             ;
         }
       );
@@ -53,6 +60,7 @@
             home-manager
             nixos-vscode-server
             neovim-nightly-overlay
+            tuicr
             ;
         };
         wsl = import ./nix/hosts/wsl {
@@ -61,6 +69,7 @@
             nixos-wsl
             home-manager
             neovim-nightly-overlay
+            tuicr
             ;
         };
       };
@@ -70,6 +79,7 @@
             nixpkgs
             home-manager
             neovim-nightly-overlay
+            tuicr
             ;
         };
     };

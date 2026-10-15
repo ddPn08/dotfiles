@@ -4,6 +4,7 @@
   system,
   nixpkgs,
   neovim-nightly-overlay,
+  tuicr,
   ...
 }:
 let
@@ -11,7 +12,7 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-  packages = import ./packages { inherit lib pkgs; };
+  packages = import ./packages { inherit lib pkgs tuicr; };
   programs = import ./programs {
     inherit
       lib

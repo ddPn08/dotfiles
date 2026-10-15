@@ -1,0 +1,110 @@
+k9s:
+  body:
+    fgColor: "#5c6a72"
+    bgColor: "#f3ead3"
+    logoColor: "#8da101"
+    logoColorMsg: "#5c6a72"
+    logoColorInfo: "#3a94c5"
+    logoColorWarn: "#dfa000"
+    logoColorError: "#f85552"
+  prompt:
+    fgColor: "#5c6a72"
+    bgColor: "#f3ead3"
+    suggestColor: "#8da101"
+    border:
+      command: "#8da101"
+      default: "#829181"
+  info:
+    fgColor: "#5c6a72"
+    sectionColor: "#8da101"
+    cpuColor: "#35a77c"
+    memColor: "#3a94c5"
+    k9sRevColor: "#df69ba"
+  help:
+    fgColor: "#5c6a72"
+    bgColor: "#f3ead3"
+    keyColor: "#8da101"
+    numKeyColor: "#35a77c"
+    sectionColor: "#3a94c5"
+  frame:
+    border:
+      fgColor: "#829181"
+      focusColor: "#8da101"
+    menu:
+      fgColor: "#5c6a72"
+      keyColor: "#8da101"
+      numKeyColor: "#35a77c"
+    crumbs:
+      fgColor: "#5c6a72"
+      bgColor: "#eae4ca"
+      activeColor: "#e1e4bd"
+    status:
+      newColor: "#8da101"
+      modifyColor: "#dfa000"
+      addColor: "#35a77c"
+      pendingColor: "#dfa000"
+      errorColor: "#f85552"
+      highlightColor: "#3a94c5"
+      killColor: "#df69ba"
+      completedColor: "#829181"
+    title:
+      fgColor: "#5c6a72"
+      bgColor: "#f3ead3"
+      highlightColor: "#8da101"
+      counterColor: "#df69ba"
+      filterColor: "#35a77c"
+  views:
+    charts:
+      bgColor: "#f3ead3"
+      dialBgColor: "#eae4ca"
+      chartBgColor: "#eae4ca"
+      focusFgColor: "#5c6a72"
+      focusBgColor: "#e1e4bd"
+      defaultDialColors:
+        - "#8da101"
+        - "#f85552"
+      defaultChartColors:
+        - "#8da101"
+        - "#3a94c5"
+    table:
+      fgColor: "#5c6a72"
+      bgColor: "#f3ead3"
+      cursorFgColor: "#5c6a72"
+      cursorBgColor: "#e1e4bd"
+      markColor: "#dfa000"
+      header:
+        fgColor: "#8da101"
+        bgColor: "#f3ead3"
+        sorterColor: "#3a94c5"
+        selectedSortColumnColor: "#35a77c"
+    xray:
+      fgColor: "#5c6a72"
+      bgColor: "#f3ead3"
+      cursorColor: "#e1e4bd"
+      cursorTextColor: "#5c6a72"
+      graphicColor: "#8da101"
+    yaml:
+      keyColor: "#f85552"
+      colonColor: "#5c6a72"
+      valueColor: "#8da101"
+    picker:
+      mainColor: "#5c6a72"
+      focusColor: "#8da101"
+      shortcutColor: "#3a94c5"
+    logs:
+      fgColor: "#5c6a72"
+      bgColor: "#f3ead3"
+      indicator:
+        fgColor: "#5c6a72"
+        bgColor: "#eae4ca"
+        toggleOnColor: "#8da101"
+        toggleOffColor: "#829181"
+  dialog:
+    fgColor: "#5c6a72"
+    bgColor: "#f3ead3"
+    buttonFgColor: "#5c6a72"
+    buttonBgColor: "#eae4ca"
+    buttonFocusFgColor: "#5c6a72"
+    buttonFocusBgColor: "#e1e4bd"
+    labelFgColor: "#3a94c5"
+    fieldFgColor: "#5c6a72"

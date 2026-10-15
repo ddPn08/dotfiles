@@ -1,14 +1,14 @@
 # shellcheck shell=bash disable=SC2034
 ####################################################################################################
 # This is a bubble theme created by @embe221ed (https://github.com/embe221ed)
-# colors are inspired by catppuccin palettes (https://github.com/catppuccin/catppuccin)
+# Colors use the Everforest Light Soft palette.
 ####################################################################################################
 
 # COLORS
 
-# background for macchiato catppuccin terminal theme
-thm_bg="#4c7b57"
-thm_fg="#eeeeee"
+# Alternating segments use contrasting foreground and background colors.
+thm_bg="#5c6a72"
+thm_fg="#f3ead3"
 
 TMUX_POWERLINE_SEPARATOR_LEFT_BOLD=""
 TMUX_POWERLINE_SEPARATOR_LEFT_THIN=""

@@ -1,7 +1,11 @@
+{ pkgs }:
 let
   soundFontDir = "/Users/ddpn08/Applications/Domino/SoundFonts";
+  shairport-sync = pkgs.callPackage ../packages/shairport-sync.nix { };
 in
 {
+  environment.systemPackages = [ shairport-sync ];
+
   launchd.user.agents.domino-fluidsynth = {
     script = ''
       exec /opt/homebrew/bin/fluidsynth \
@@ -21,6 +25,24 @@ in
       LimitLoadToSessionType = "Aqua";
       StandardOutPath = "/tmp/domino-fluidsynth.log";
       StandardErrorPath = "/tmp/domino-fluidsynth.err";
+    };
+  };
+
+  launchd.user.agents.shairport-sync = {
+    serviceConfig = {
+      Label = "com.ddpn08.shairport-sync";
+      ProgramArguments = [
+        "${shairport-sync}/bin/shairport-sync"
+        "--output=coreaudio"
+        "--port=5001"
+      ];
+      RunAtLoad = true;
+      KeepAlive = {
+        SuccessfulExit = false;
+      };
+      LimitLoadToSessionType = "Aqua";
+      StandardOutPath = "/tmp/shairport-sync.log";
+      StandardErrorPath = "/tmp/shairport-sync.err";
     };
   };
 

@@ -8,11 +8,6 @@
     };
     initContent = ''
       setopt INC_APPEND_HISTORY
-
-      # pnpm
-      export PNPM_HOME="$HOME/.local/share/pnpm"   # macOS では "$HOME/Library/pnpm"
-      export PATH="$PNPM_HOME:$PATH"
-      # pnpm end
     '';
     profileExtra = ''
       source ~/.orbstack/shell/init.zsh 2>/dev/null || :

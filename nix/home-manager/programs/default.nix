@@ -8,8 +8,8 @@ let
   aria2 = import ./aria2;
   bash = import ./bash;
   btop = import ./btop;
+  codex = import ./codex;
   direnv = import ./direnv;
-  fish = import ./fish;
   fzf = import ./fzf;
   gh = import ./gh;
   git = import ./git;
@@ -17,22 +17,20 @@ let
   k9s = import ./k9s;
   lazygit = import ./lazygit;
   nvim = import ./neovim { inherit pkgs neovim-nightly-overlay; };
-  nushell = import ./nushell;
-  mise = import ./mise;
-
+  pi-coding-agent = import ./pi-coding-agent { inherit pkgs; };
   ripgrep = import ./ripgrep;
   starship = import ./starship;
   tmux = import ./tmux { inherit lib pkgs; };
+  uv = import ./uv;
   yt-dlp = import ./yt-dlp;
-  zellij = import ./zellij;
   zsh = import ./zsh;
 in
 [
   aria2
   bash
   btop
+  codex
   direnv
-  fish
   fzf
   gh
   git
@@ -40,12 +38,11 @@ in
   k9s
   lazygit
   nvim
-  nushell
-  mise
+  pi-coding-agent
   ripgrep
   starship
   tmux
+  uv
   yt-dlp
-  zellij
   zsh
 ]

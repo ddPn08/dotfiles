@@ -2,6 +2,7 @@
   nixpkgs,
   home-manager,
   neovim-nightly-overlay,
+  tuicr,
   ...
 }:
 let
@@ -31,9 +32,26 @@ in
         ;
     };
     modules = [
-      ({ ... }: {
+      ({ pkgs, ... }: {
         home.username = username;
         home.homeDirectory = home-dir;
+        # Make mise tools available to non-interactive SSH commands as well.
+        home.sessionPath = [ "${home-dir}/.local/share/mise/shims" ];
+
+        targets.genericLinux.enable = true;
+        nix.package = pkgs.nix;
+        nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+        # Keep keys imported on the host across Home Manager activations.
+        programs.gpg.mutableKeys = lib.mkForce true;
+        programs.gpg.mutableTrust = lib.mkForce true;
+
+        # Non-login SSH commands do not read /etc/profile.d/nix.sh.
+        programs.zsh.envExtra = ''
+          if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+            . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+          fi
+        '';
       })
       ({ config, lib, ... }:
         import ../../home-manager {
@@ -45,6 +63,7 @@ in
             home-dir
             nixpkgs
             neovim-nightly-overlay
+            tuicr
             ;
         }
       )

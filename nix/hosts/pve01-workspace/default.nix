@@ -3,6 +3,7 @@
   home-manager,
   nixos-vscode-server,
   neovim-nightly-overlay,
+  tuicr,
 }:
 let
   lib = nixpkgs.lib;
@@ -33,6 +34,7 @@ lib.nixosSystem {
             home-dir
             nixpkgs
             neovim-nightly-overlay
+            tuicr
             ;
         };
     }

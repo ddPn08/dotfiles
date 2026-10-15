@@ -23,6 +23,14 @@
     # mise で pnpm を管理するなら、project の packageManager による自動DLを止める
     manage-package-manager-versions=false
   '';
+  programs.zsh = {
+    initContent = ''
+      # pnpm
+      export PNPM_HOME="$HOME/.local/share/pnpm"   # macOS では "$HOME/Library/pnpm"
+      export PATH="$PNPM_HOME/bin:$PATH"
+      # pnpm end
+    '';
+  };
   programs.fish = {
     shellInit = ''
       set -x PNPM_HOME "$HOME/.local/share/pnpm"

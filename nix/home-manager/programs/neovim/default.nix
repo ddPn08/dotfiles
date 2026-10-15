@@ -10,6 +10,8 @@
     "nvim/lua/plugins/nix.lua".source = ./lua/plugins/nix.lua;
     "nvim/lua/plugins/haskell.lua".source = ./lua/plugins/haskell.lua;
     "nvim/lua/plugins/diffview.lua".source = ./lua/plugins/diffview.lua;
+    "nvim/lua/plugins/everforest.lua".source = ./lua/plugins/everforest.lua;
+    "nvim/lua/plugins/scope.lua".source = ./lua/plugins/scope.lua;
     "nvim/lua/plugins/tilt.lua".source = ./lua/plugins/tilt.lua;
   };
 

@@ -1,4 +1,9 @@
 {
+  environment.systemPath = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -7,10 +12,20 @@
       cleanup = "uninstall";
       extraFlags = [ "--force-cleanup" ];
     };
+    taps = [
+      {
+        name = "k1LoW/tap";
+        trusted = true;
+      }
+    ];
     brews = [
       "fluid-synth"
       "ghcup"
       "ios-deploy"
+      {
+        name = "k1LoW/tap/mo";
+        trusted = true;
+      }
     ];
     casks = [
       "android-studio"
@@ -35,10 +50,10 @@
       "mysqlworkbench"
       "nani"
       "notion"
-      "osu"
       "obs"
       "obsidian"
       "orbstack"
+      "osu"
       "pgadmin4"
       "postman"
       "prismlauncher"
@@ -56,10 +71,10 @@
       "zoom"
     ];
     masApps = {
-      "Bitwarden" = 1352778147;
-      "Amazon Prime Video" = 545519333;
       "Amazon Kindle" = 302584613;
-      "RunCat" = 1429033973;
+      "Amazon Prime Video" = 545519333;
+      "Bitwarden" = 1352778147;
+      "RunCat Neo" = 6757801838;
     };
   };
 }

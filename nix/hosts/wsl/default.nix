@@ -3,6 +3,7 @@
   nixos-wsl,
   home-manager,
   neovim-nightly-overlay,
+  tuicr,
   ...
 }:
 let
@@ -22,16 +23,20 @@ lib.nixosSystem {
     home-manager.nixosModules.home-manager
     {
       home-manager.useUserPackages = true;
-      home-manager.users."${username}" = import ../../home-manager {
-        inherit
-          lib
-          system
-          username
-          home-dir
-          nixpkgs
-          neovim-nightly-overlay
-          ;
-      };
+      home-manager.users."${username}" =
+        { config, ... }:
+        import ../../home-manager {
+          inherit
+            config
+            lib
+            system
+            username
+            home-dir
+            nixpkgs
+            neovim-nightly-overlay
+            tuicr
+            ;
+        };
     }
   ];
 }

@@ -1,11 +1,11 @@
 format = """
 $os\
 $username\
-[](bg:#eeeeee fg:#4c7b57)\
+[](bg:#f3ead3 fg:#5c6a72)\
 $hostname\
-[](bg:#4c7b57 fg:#eeeeee)\
+[](bg:#5c6a72 fg:#f3ead3)\
 $directory\
-[](fg:#4c7b57 bg:#eeeeee)\
+[](fg:#5c6a72 bg:#f3ead3)\
 $c\
 $elixir\
 $elm\
@@ -19,13 +19,13 @@ $nim\
 $python\
 $rust\
 $scala\
-[](fg:#eeeeee bg:#4c7b57)\
+[](fg:#f3ead3 bg:#5c6a72)\
 $git_branch\
 $git_status\
-[](fg:#4c7b57 bg:#eeeeee)\
+[](fg:#5c6a72 bg:#f3ead3)\
 $nix_shell\
-[](fg:#eeeeee)
-[ ❯](fg:#eeeeee) \
+[](fg:#f3ead3)
+[ ❯](fg:#8da101 bold) \
 """
 
 # Disable the blank line at the start of the prompt
@@ -33,8 +33,8 @@ $nix_shell\
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
-style_user = "bg:#4c7b57 fg:#eeeeee bold"
-style_root = "bg:#4c7b57 fg:#eeeeee bold"
+style_user = "bg:#5c6a72 fg:#f3ead3 bold"
+style_root = "bg:#5c6a72 fg:#f3ead3 bold"
 format = '[ $user ]($style)'
 show_always = true
 disabled = false
@@ -45,12 +45,12 @@ disabled = false
 disabled = true # Disabled by default
 
 [hostname]
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ @$hostname ]($style)'
 ssh_only = true
 
 [directory]
-style = "bg:#4c7b57 fg:#eeeeee"
+style = "bg:#5c6a72 fg:#f3ead3"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -70,53 +70,53 @@ truncation_symbol = "…/"
 # "Important 󰈙 " = " 󰈙 "
 [docker_context]
 symbol = " "
-style = "bg:#06969A"
+style = "bg:#e1e7dd fg:#5c6a72"
 format = '[ $symbol $context ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#4c7b57 fg:#eeeeee"
+style = "bg:#5c6a72 fg:#f3ead3"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#4c7b57 fg:#eeeeee"
+style = "bg:#5c6a72 fg:#f3ead3"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
 symbol = ""
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ($virtualenv) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol ($version) ]($style)'
 
 [nix_shell]
 symbol = " "
-style = "bg:#eeeeee fg:#4c7b57"
+style = "bg:#f3ead3 fg:#5c6a72"
 format = '[ $symbol $name ]($style)'

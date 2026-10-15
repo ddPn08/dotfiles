@@ -20,21 +20,40 @@ config.font = wezterm.font_with_fallback({
 
 config.use_ime = true
 
+config.color_scheme = "Everforest Light Soft (Gogh)"
 config.window_background_opacity = 0.70
 config.macos_window_background_blur = 20
 
 config.window_decorations = "RESIZE"
+-- The full-window background layer also supplies the translucent header background.
 config.window_frame = {
     inactive_titlebar_bg = "none",
     active_titlebar_bg = "none"
 }
 config.window_background_gradient = {
-    colors = {"#000000"}
+    colors = {"#f3ead3"}
 }
 config.show_new_tab_button_in_tab_bar = false
 config.show_close_tab_button_in_tabs = false -- only nightly build
 config.colors = {
+    background = "#f3ead3",
+    foreground = "#5c6a72",
+    selection_bg = "#e1e4bd",
+    selection_fg = "#5c6a72",
     tab_bar = {
+        background = "none",
+        active_tab = {
+            bg_color = "#f3ead3",
+            fg_color = "#5c6a72"
+        },
+        inactive_tab = {
+            bg_color = "#eae4ca",
+            fg_color = "#708089"
+        },
+        inactive_tab_hover = {
+            bg_color = "#eae4ca",
+            fg_color = "#5c6a72"
+        },
         inactive_tab_edge = "none"
     }
 }
@@ -59,12 +78,14 @@ local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-    local background = "#4c7b57"
-    local foreground = "#eeeeee"
+    local background = "#eae4ca"
+    local foreground = "#708089"
     local edge_background = "none"
     if tab.is_active then
-        background = "#b5fff9"
-        foreground = "#4c7b57"
+        background = "#f3ead3"
+        foreground = "#5c6a72"
+    elseif hover then
+        foreground = "#5c6a72"
     end
     local edge_foreground = background
     local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
