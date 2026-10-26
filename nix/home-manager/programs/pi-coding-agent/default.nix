@@ -7,6 +7,7 @@
 
   programs.pi-coding-agent = {
     enable = true;
+    keybindings."app.model.cycleForward" = [ ];
     package = pkgs.pi-coding-agent.overrideAttrs (
       finalAttrs: previousAttrs: {
         version = "1.2.0";
