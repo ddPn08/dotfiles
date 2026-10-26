@@ -1,13 +1,15 @@
-{ username }:
 {
+  networking.applicationFirewall = {
+    enable = true;
+    blockAllIncoming = false;
+  };
+
   security = {
-    sudo.extraConfig = ''
-      ${username} ALL=NOPASSWD: ALL
-    '';
     pam = {
       services = {
         sudo_local = {
           touchIdAuth = true;
+          watchIdAuth = true;
         };
       };
     };

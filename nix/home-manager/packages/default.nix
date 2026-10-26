@@ -20,7 +20,6 @@ let
     ripgrep
 
     # Cloud & platform CLIs
-    (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
     (google-cloud-sdk.withExtraComponents (
       with pkgs.google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]
     ))

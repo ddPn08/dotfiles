@@ -2,7 +2,7 @@
 {
   # Follow the sound selected in macOS System Settings instead of a fixed file.
   home.sessionVariables = pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
-    PI_NOTIFY_SOUND_CMD = "/usr/bin/osascript -e beep";
+    PI_NOTIFY_SOUND_CMD = "afplay /System/Library/Sounds/Tink.aiff";
   };
 
   programs.pi-coding-agent = {
