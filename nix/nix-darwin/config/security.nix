@@ -8,8 +8,8 @@
     pam = {
       services = {
         sudo_local = {
-          touchIdAuth = true;
-          watchIdAuth = true;
+          touchIdAuth = false;
+          watchIdAuth = false;
         };
       };
     };
