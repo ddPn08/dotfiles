@@ -5,6 +5,7 @@
   neovim-nightly-overlay,
 }:
 let
+  antigravity-cli = import ./antigravity-cli;
   aria2 = import ./aria2;
   bash = import ./bash;
   btop = import ./btop;
@@ -17,7 +18,8 @@ let
   k9s = import ./k9s;
   lazygit = import ./lazygit;
   nvim = import ./neovim { inherit pkgs neovim-nightly-overlay; };
-  pi-coding-agent = import ./pi-coding-agent { inherit pkgs; };
+  pi-coding-agent = import ./pi-coding-agent;
+  pnpm = import ./pnpm;
   ripgrep = import ./ripgrep;
   starship = import ./starship;
   tmux = import ./tmux { inherit lib pkgs; };
@@ -26,6 +28,7 @@ let
   zsh = import ./zsh;
 in
 [
+  antigravity-cli
   aria2
   bash
   btop
@@ -39,6 +42,7 @@ in
   lazygit
   nvim
   pi-coding-agent
+  pnpm
   ripgrep
   starship
   tmux

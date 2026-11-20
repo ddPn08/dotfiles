@@ -46,7 +46,6 @@ let
 
     # Developer productivity
     act
-    pnpm
 
     # Local code review TUI
     tuicr.packages.${stdenv.hostPlatform.system}.default

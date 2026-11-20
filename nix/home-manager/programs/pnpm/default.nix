@@ -1,4 +1,5 @@
 {
+  programs.pnpm.enable = true;
 
   xdg.configFile."pnpm/rc".text = ''
     # 公開直後の compromised package を踏みにくくする。1440 = 24h
@@ -20,23 +21,12 @@
     verify-store-integrity=true
     strict-store-pkg-content-check=true
 
-    # mise で pnpm を管理するなら、project の packageManager による自動DLを止める
+    # pnpm 本体は Nix で管理するため、packageManager による自動DLを止める
     manage-package-manager-versions=false
   '';
-  programs.zsh = {
-    initContent = ''
-      # pnpm
-      export PNPM_HOME="$HOME/.local/share/pnpm"   # macOS では "$HOME/Library/pnpm"
-      export PATH="$PNPM_HOME/bin:$PATH"
-      # pnpm end
-    '';
-  };
-  programs.fish = {
-    shellInit = ''
-      set -x PNPM_HOME "$HOME/.local/share/pnpm"
-      if not contains $PNPM_HOME $PATH
-        set -x PATH $PNPM_HOME $PATH
-      end
-    '';
-  };
+
+  # グローバルコマンドは残し、pnpm 本体は Nix プロファイルを優先する
+  # programs.zsh.initContent = ''
+  #   path=("''${(@)path:#$PNPM_HOME/bin}" "$PNPM_HOME/bin")
+  # '';
 }

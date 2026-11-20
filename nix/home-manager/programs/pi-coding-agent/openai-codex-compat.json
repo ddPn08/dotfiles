@@ -1,0 +1,7 @@
+{
+  "fastMode": true,
+  "webSearch": "disabled",
+  "webRun": true,
+  "imageGeneration": false,
+  "autoCompactAtPercent": 45
+}

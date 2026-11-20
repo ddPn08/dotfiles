@@ -29,6 +29,7 @@
     ];
     casks = [
       "android-studio"
+      "antigravity"
       "asana"
       "audacity"
       "chatgpt"

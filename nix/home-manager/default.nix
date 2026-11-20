@@ -26,6 +26,8 @@ in
 {
   imports = programs ++ modules;
 
+  nixpkgs.config.allowUnfree = true;
+
   xdg.enable = true;
 
   home = {

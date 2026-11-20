@@ -1,50 +1,40 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+let
+  configDir = config.programs.pi-coding-agent.configDir;
+in
 {
   # Follow the sound selected in macOS System Settings instead of a fixed file.
   home.sessionVariables = pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     PI_NOTIFY_SOUND_CMD = "afplay /System/Library/Sounds/Tink.aiff";
   };
 
+  home.file = {
+    "${configDir}/prompts/self-review.md".source = ./prompts/self-review.md;
+    "${configDir}/prompts/split-plan.md".source = ./prompts/split-plan.md;
+    "${configDir}/openai-codex-compat.json".source = ./openai-codex-compat.json;
+  };
+
   programs.pi-coding-agent = {
     enable = true;
+    # Pi updates changelog markers and preferences in settings.json at runtime.
+    mutableSettings = true;
+    settings = {
+      "$schema" = "https://pi.dev/schemas/settings.schema.json";
+      theme = "light";
+      defaultProvider = "openai-codex";
+      defaultModel = "gpt-6.2-sol";
+      defaultThinkingLevel = "medium";
+      hideThinkingBlock = false;
+      npmCommand = [ "pnpm" ];
+      packages = [
+        "npm:pi-input-history"
+        "npm:pi-openai-codex-compat"
+        "npm:pi-notify"
+        "npm:@estebanforge/pi-antigravity-bridge"
+      ];
+    };
     keybindings."app.model.cycleForward" = [ ];
-    # package = pkgs.pi-coding-agent.overrideAttrs (
-    #   finalAttrs: previousAttrs: {
-    #     version = "1.2.0";
-    #     src = pkgs.fetchFromGitHub {
-    #       owner = "earendil-works";
-    #       repo = "pi";
-    #       tag = "v${finalAttrs.version}";
-    #       hash = "sha256-IjNJvVxjzRur2foQDWPA5iM9sa3ThBoZU1/LT5pU6jc=";
-    #     };
-    #     npmDepsHash = "sha256-P/KWhkvLjtpWRiwLCHu2iUVyI8nragSnQGWUQNsRhw8=";
-    #     npmDeps = pkgs.fetchNpmDeps {
-    #       name = "${finalAttrs.pname}-${finalAttrs.version}-npm-deps";
-    #       inherit (finalAttrs) src;
-    #       hash = finalAttrs.npmDepsHash;
-    #     };
-    #     modelData = pkgs.fetchurl {
-    #       url = "https://registry.npmjs.org/@earendil-works/pi-ai/-/pi-ai-${finalAttrs.version}.tgz";
-    #       hash = "sha256-w+aUI7yrlxLzGn5bbTRIrjVq+EQ57GvHAfYm9uoWRTU=";
-    #     };
-    #     buildPhase = ''
-    #       runHook preBuild
-    #       npm run build:offline
-    #       runHook postBuild
-    #     '';
-    #     # v1 replaces the client/protocol workspaces with codemode/MCP.
-    #     postInstall =
-    #       pkgs.lib.replaceStrings
-    #         [
-    #           "@earendil-works/pi-client:packages/client"
-    #           "@earendil-works/pi-protocol:packages/protocol"
-    #         ]
-    #         [
-    #           "@earendil-works/pi-codemode:packages/codemode"
-    #           "@earendil-works/pi-mcp:packages/mcp"
-    #         ]
-    #         previousAttrs.postInstall;
-    #   }
-    # );
+    models.providers.openai-codex.modelOverrides."gpt-6.1-sol".contextWindow = 500000;
+    context = ./AGENTS.md;
   };
 }

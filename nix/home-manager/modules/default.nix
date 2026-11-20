@@ -1,6 +1,5 @@
 let
   haskell = import ./haskell;
-  pnpm = import ./pnpm;
   python = import ./python;
   rustup = import ./rustup;
   tuicr = import ./tuicr;
@@ -8,7 +7,6 @@ let
 in
 [
   haskell
-  pnpm
   python
   rustup
   tuicr
