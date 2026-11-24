@@ -54,6 +54,14 @@
         }
       );
       nixosConfigurations = {
+        gce-gpu = import ./nix/hosts/gce-gpu {
+          inherit
+            nixpkgs
+            home-manager
+            neovim-nightly-overlay
+            tuicr
+            ;
+        };
         pve01-workspace = import ./nix/hosts/pve01-workspace {
           inherit
             nixpkgs
