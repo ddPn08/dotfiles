@@ -16,6 +16,7 @@ lib.nixosSystem {
     "${nixpkgs}/nixos/modules/virtualisation/google-compute-config.nix"
     ../../nixos/config/i18n.nix
     ../../nixos/config/nix.nix
+    ../../nixos/config/virtualisation.nix
     (import ../../nixos/config/programs.nix {
       inherit lib;
       pkgs = nixpkgs.legacyPackages.${system};
@@ -53,6 +54,7 @@ lib.nixosSystem {
       };
       users.users.${username} = {
         isNormalUser = true;
+        linger = true;
         extraGroups = [ "wheel" ];
         shell = pkgs.zsh;
       };
@@ -63,6 +65,8 @@ lib.nixosSystem {
         open = true;
         nvidiaSettings = false;
       };
+      hardware.nvidia-container-toolkit.enable = true;
+      virtualisation.docker.enable = true;
 
       time.timeZone = "Asia/Tokyo";
 
