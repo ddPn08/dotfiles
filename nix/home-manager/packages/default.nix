@@ -2,6 +2,7 @@
   lib,
   pkgs,
   tuicr,
+  enableDockerCredentialHelpers,
 }:
 let
   stdenv = pkgs.stdenv;
@@ -25,9 +26,6 @@ let
     ))
     cloudflared
     stripe-cli
-
-    # Kubernetes tooling
-    docker-credential-helpers
 
     # Core CLI essentials
     curl
@@ -70,6 +68,7 @@ in
 lib.mkMerge [
   (if stdenv.isDarwin then darwin-pkgs else [ ])
   (if stdenv.isLinux then linux-pkgs else [ ])
+  (lib.optional enableDockerCredentialHelpers pkgs.docker-credential-helpers)
   base
   nix-utils
 ]

@@ -74,6 +74,7 @@ lib.nixosSystem {
       home-manager.users.${username} =
         { config, ... }:
         import ../../home-manager {
+          enableDockerCredentialHelpers = false;
           inherit
             config
             lib

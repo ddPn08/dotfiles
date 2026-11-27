@@ -5,6 +5,7 @@
   nixpkgs,
   neovim-nightly-overlay,
   tuicr,
+  enableDockerCredentialHelpers ? true,
   ...
 }:
 let
@@ -12,7 +13,9 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-  packages = import ./packages { inherit lib pkgs tuicr; };
+  packages = import ./packages {
+    inherit lib pkgs tuicr enableDockerCredentialHelpers;
+  };
   programs = import ./programs {
     inherit
       lib
